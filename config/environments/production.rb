@@ -76,6 +76,11 @@ Rails.application.configure do
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
 
+  config.consider_all_requests_local = false  # Ensure errors are not shown in the browser
+  config.action_dispatch.show_exceptions = false  # Prevent Rails from showing error pages automatically
+  config.whiny_nils = false
+  config.debug_exception_response_format = :default # Optionally: This will control how detailed error messages are returned
+
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com

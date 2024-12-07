@@ -47,6 +47,11 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+  
+  config.consider_all_requests_local = false  # Ensure errors are not shown in the browser
+  config.action_dispatch.show_exceptions = false  # Prevent Rails from showing error pages automatically
+  config.whiny_nils = false
+  config.debug_exception_response_format = :default # Optionally: This will control how detailed error messages are returned
 
   # Raise error when a before_action's only/except options reference missing actions.
   config.action_controller.raise_on_missing_callback_actions = true
