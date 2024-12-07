@@ -23,13 +23,17 @@ class FriendController < ApplicationController
     end
   end
 
-  # PUT /friend/1
+  # PUT /friend
   def update
-    friend = Friend.find(params[:id])
-    if friend.update(friend_params)
-      render json: friend, status: :ok
-    else
-      render json: friend.errors, status: :unprocessable_entity
+    friend_params = params.require(:friend).permit(:id, :FirstName, :LastName, :Email)
+
+    friend = Friend.find_by(id: friend_params[:id])
+    if friend
+      if friend.update(friend_params.except(:id))
+        render json: friend, status: :ok
+      else
+        render json: friend.errors, status: :unprocessable_entity
+      end
     end
   end
 

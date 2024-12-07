@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get "api/friend/all", controller: "friend", action: :all
   get "api/friend/:id", to: 'friend#get_friend'
-  put "api/friend/:id", to: 'friend#update'
+  put "api/friend", to: 'friend#update'
   delete "api/friend/:id", to: 'friend#destroy'
   post "api/friend", to: 'friend#create'
   get "api/lookup/friend-lookup", to: 'friend#lookup'
