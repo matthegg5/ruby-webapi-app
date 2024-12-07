@@ -4,7 +4,6 @@ class CreateFriends < ActiveRecord::Migration[8.0]
       t.string :FirstName
       t.string :LastName
       t.string :Email
-      t.timestamps
     end
   end
 end

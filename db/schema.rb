@@ -15,7 +15,5 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_06_220112) do
     t.string "FirstName"
     t.string "LastName"
     t.string "Email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 end
