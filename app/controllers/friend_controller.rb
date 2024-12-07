@@ -33,6 +33,16 @@ class FriendController < ApplicationController
     end
   end
 
+  # GET /lookup/friend-lookup
+  def lookup
+    friend = Friend.select("id, CONCAT(FirstName, ' ', LastName) AS displaymember").as_json
+    if friend
+      render json: friend, status: :ok
+    else
+      render json: friend.eerrors, status: :unprocessable_entity
+    end
+  end
+
   # DELETE /friend/1
   def destroy
     friend = Friend.find_by(id: params[:id])

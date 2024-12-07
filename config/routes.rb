@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   put "api/friend/:id", to: 'friend#update'
   delete "api/friend/:id", to: 'friend#destroy'
   post "api/friend", to: 'friend#create'
+  get "api/lookup/friend-lookup", to: 'friend#lookup'
 
   # Defines the root path route ("/")
   # root "posts#index"
